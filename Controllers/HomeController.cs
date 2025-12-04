@@ -8,6 +8,12 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
+            // 從 Session 取得使用者名稱
+            string userName = HttpContext.Session.GetString("User");
+
+            // 使用 ViewData 將資料傳給 View
+            ViewData["UserName"] = userName;
+
             return View();
         }
 
