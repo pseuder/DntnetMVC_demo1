@@ -1,10 +1,7 @@
 services:
   my-mvc-web:
-    image: my-mvc-app:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: my_mvc_container
+    image: pseuder/dntnetmvc_demo1:latest
+    container_name: dntnetmvc_demo1_container
     restart: always
     ports:
       - "5006:8080"
