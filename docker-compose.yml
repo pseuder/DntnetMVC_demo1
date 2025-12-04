@@ -1,0 +1,14 @@
+services:
+  my-mvc-web:
+    image: my-mvc-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my_mvc_container
+    restart: always
+    ports:
+      # 左邊是 Linux 主機對外開放的 Port，右邊是容器內的 Port (預設 8080)
+      # 這樣設定後，您就可以用 http://linux-ip:80 連上網站
+      - "80:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
